@@ -1,0 +1,415 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar-transition {
+    transition: transform 0.5s ease-in-out;
+}
+
+@font-face {
+    font-family: 'Pricedown';
+    src: url('assets/fonts/Pricedown.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sign';
+    src: url('assets/fonts/Sign.ttf') format('truetype');
+}
+
+.pricedown {
+    font-family: 'Pricedown', sans-serif;
+}
+
+.sign {
+    font-family: 'Sign', sans-serif;
+}
+
+:root {
+    --whiteop: #ffffffc3;
+    --blackop: #00000019;
+    --bg1: #0e182f;
+    --bg2: #081022;
+    --bg2op: rgba(6, 16, 34, 0.6);
+    --bg5op: rgba(6, 16, 34, 0.318);
+    --bg3op: rgba(42, 108, 189, 0.091);
+    --bg4op: rgba(89, 164, 255, 0.045);
+    --lblue: #75aaf1;
+    --ltext: #d2e5ff;
+    --lgold: #fcd672;
+    --lgop: rgba(252, 214, 114, 0.3);
+    --llgold: #f7f8df;
+    --bg1l: #18284b;
+    --bg1lop: #18284bb1;
+    --opac: rgba(123, 182, 255, 0.1);
+    --opac2: rgba(123, 182, 255, 0.3);
+    --hover-bg-gradient-start: #18284b;
+    --hover-bg-gradient-end: #263e74;
+    --ggrad: linear-gradient(
+        to right,
+        rgba(242, 180, 23, 0),
+        #f2b417,
+        rgba(242, 180, 23, 0)
+    );
+    --hover-border-color: #263e74;
+    --gold: gold;
+
+    --dbg1: #e9f4ff;
+    --dbg2: #ffffff;
+    --dbg2op: rgba(255, 255, 255, 0.6);
+    --dlblue: #18284b;
+    --dltext: #2669cc;
+    --dlgold: #579aff;
+    --dllgold: #b7dbff;
+    --dbg1l: #f8fcff;
+    --dggrad: linear-gradient(
+        to right,
+        rgba(242, 180, 23, 0),
+        #f2b417,
+        rgba(242, 180, 23, 0)
+    );
+    --dgold: #b38900;
+}
+
+.reflection {
+    position: relative;
+    overflow: hidden;
+}
+.reflection::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: -180px;
+    left: 0;
+    background-color: #fff;
+    opacity: 0;
+    transform: rotate(45deg);
+    animation: reflect 3s ease-in-out infinite;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: reflect 2s ease-in-out infinite;
+}
+
+.dark .reflection::after {
+    background-color: #2669cc;
+}
+
+@keyframes reflect {
+    0% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    81% {
+        transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes reflect {
+    0% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    81% {
+        transform: scale(4) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(50) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.gradMesh {
+    top: 0;
+    left: 0;
+    height: 200%;
+    background-color: hsla(221, 61%, 8%, 1);
+    background-image: radial-gradient(
+            at 76% 56%,
+            hsla(221, 54%, 11%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 41% 42%, hsla(222, 64%, 31%, 1) 0px, transparent 50%),
+        radial-gradient(at 4% 59%, hsla(221, 39%, 26%, 1) 0px, transparent 50%),
+        radial-gradient(
+            at 100% 46%,
+            hsla(212, 42%, 45%, 1) 0px,
+            transparent 50%
+        );
+    animation: moveBackground 15s linear infinite;
+}
+
+.gradMeshLight {
+    top: 0;
+    left: 0;
+    height: 200%;
+    background-color: hsla(146, 0%, 100%, 1);
+    background-image: radial-gradient(
+            at 49% 58%,
+            hsla(124, 0%, 83%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 1% 34%, hsla(194, 100%, 85%, 1) 0px, transparent 50%),
+        radial-gradient(at 98% 60%, hsla(210, 54%, 42%, 1) 0px, transparent 50%),
+        radial-gradient(at 28% 61%, hsla(206, 71%, 54%, 1) 0px, transparent 50%),
+        radial-gradient(at 86% 39%, hsla(74, 100%, 86%, 1) 0px, transparent 50%);
+}
+
+@keyframes moveBackground {
+    0% {
+        background-size: 100% 100%;
+    }
+    10% {
+        background-size: 120% 80%;
+    }
+    20% {
+        background-size: 190% 140%;
+    }
+    30% {
+        background-size: 130% 110%;
+    }
+    40% {
+        background-size: 150% 120%;
+    }
+    50% {
+        background-size: 180% 100%;
+    }
+    60% {
+        background-size: 220% 80%;
+    }
+    70% {
+        background-size: 100% 50%;
+    }
+    80% {
+        background-size: 120% 70%;
+    }
+    90% {
+        background-size: 110% 90%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+.gradient-canvas {
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: #0e182f;
+    --gradient-color-2: #223e67;
+    --gradient-color-3: #18284b;
+    --gradient-color-4: #081022;
+}
+
+.grad-text {
+    background: linear-gradient(to right, #fcd672, #f7f8df, rgba#FCD672);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* color: transparent; */
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.gradgold {
+    background: linear-gradient(
+        to right,
+        rgba(242, 180, 23, 0),
+        #f2b417,
+        rgba(242, 180, 23, 0)
+    );
+}
+
+.bgpattern {
+    background-color: #0e182f;
+    opacity: 1;
+    background-image: linear-gradient(
+            30deg,
+            #081022 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #081022 87.5%,
+            #081022
+        ),
+        linear-gradient(
+            150deg,
+            #081022 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #081022 87.5%,
+            #081022
+        ),
+        linear-gradient(
+            30deg,
+            #081022 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #081022 87.5%,
+            #081022
+        ),
+        linear-gradient(
+            150deg,
+            #081022 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #081022 87.5%,
+            #081022
+        ),
+        linear-gradient(
+            60deg,
+            #08102277 25%,
+            transparent 25.5%,
+            transparent 75%,
+            #08102277 75%,
+            #08102277
+        ),
+        linear-gradient(
+            60deg,
+            #08102277 25%,
+            transparent 25.5%,
+            transparent 75%,
+            #08102277 75%,
+            #08102277
+        );
+    background-size: 46px 81px;
+    background-position:
+        0 0,
+        0 0,
+        23px 40px,
+        23px 40px,
+        0 0,
+        23px 40px;
+}
+
+.glassgrad {
+    background: linear-gradient(
+        to top,
+        rgba(123, 182, 255, 0.2),
+        rgba(132, 187, 255, 0),
+        rgba(123, 182, 255, 0.2)
+    );
+}
+
+.glassgrad2 {
+    background: linear-gradient(
+        to right,
+        rgba(123, 182, 255, 0.1),
+        rgba(132, 187, 255, 0),
+        rgba(123, 182, 255, 0.1)
+    );
+}
+
+.bgp {
+    background: linear-gradient(
+            0deg,
+            transparent 45%,
+            #0e182f 45%,
+            #0e182f 55%,
+            transparent 55%,
+            transparent 20%,
+            #0e182f 20%,
+            #0e182f 30%,
+            transparent 30%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 45%,
+            #0e182f 45%,
+            #0e182f 55%,
+            transparent 55%,
+            transparent 20%,
+            #0e182f 20%,
+            #0e182f 30%,
+            transparent 30%
+        );
+    background-size: 1em 1em;
+    background-color: #081022;
+    opacity: 1;
+}
+
+.cntblue {
+    @apply shadow-black/70 dark:shadow-black/10 bg-[var(--bg1)] dark:bg-gray-100 dark:border-gray-400 border-[1px] border-[var(--opac)] shadow-2xl;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.blockanim {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+@keyframes appear2 {
+    from {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.blockanim2 {
+    animation: appear2 linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.sv {
+    width: 100%;
+    /* z-index: 1000; */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+text {
+    stroke: #fcd672;
+    /* color: #081022; */
+    stroke-width: 1.5px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    fill: transparent;
+    animation: dash 8s ease-out alternate infinite;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+h1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as needed */
+}

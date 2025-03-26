@@ -1,0 +1,217 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'); */
+
+.body {
+    height: 150vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.body {
+    box-sizing: border-box;
+    /* font-family: 'Varela Round', cursive; */
+}
+
+.front-box,
+.back-box {
+    position: fixed;
+    perspective: 400px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.starter2 {
+    position: fixed; /* Ensure the component covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Adjust to your design */
+    color: #fff; /* Adjust to your design */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.starter2.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.front-box {
+    z-index: 2;
+}
+
+.back-box {
+    z-index: 1;
+}
+
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    animation: go-front linear both;
+    animation-timeline: scroll(root);
+}
+
+.front-box .front {
+    background-image: url('/src/assets/front4.png');
+    background-size: contain;
+    background-position: 100% 50%;
+}
+
+.back-box .back {
+    background-image: url('/src/assets/back.png');
+    background-size: cover;
+    background-position: 50% 70%;
+    animation-name: go-back;
+}
+
+@keyframes go-front {
+    0% {
+        transform: translateZ(0px);
+    }
+    100% {
+        transform: translateZ(100px);
+    }
+}
+
+@keyframes go-back {
+    0% {
+        transform: translateZ(150px);
+        filter: blur(0px);
+    }
+    100% {
+        transform: translateZ(10px);
+        filter: blur(5px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: aqua;
+    z-index: 1000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    animation: fade-in 1s ease-in-out;
+}
+
+.centered-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    z-index: 2001;
+    color: white;
+    animation: fade-in 1s ease-in-out;
+    display: none;
+}
+
+@media screen and (orientation: portrait) {
+    .front-box .front {
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+}
+
+.ml1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    z-index: 2000;
+    color: white;
+    animation: fade-in 1s ease-in-out;
+}
+
+.ml1 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    transform-origin: 0 0;
+}
+
+.ml1 .line1 {
+    top: 0;
+}
+.ml1 .line2 {
+    bottom: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Existing styles remain unchanged */
+
+.fade {
+    opacity: 0;
+    transition: opacity 5s ease-out;
+    /* Ensure this transition is always applied */
+}
+
+.fade-active {
+    opacity: 1;
+    /* Ensure this is always applied */
+}

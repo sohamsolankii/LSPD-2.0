@@ -1,0 +1,53 @@
+section .scroll {
+    width: 100%;
+    display: flex;
+}
+
+section .scroll div {
+    color: #000;
+    font-size: 2rem;
+    background: #fcd672;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 800;
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+section .scroll div span {
+    -webkit-text-stroke: 1px #000;
+    color: transparent;
+}
+
+.text1 {
+    transform: rotate(6deg) translateY(200px) translateX(-200px);
+    animation-delay: 0s;
+}
+
+.text2 {
+    transform: rotate(-9deg) translateY(-150px) translateX(-250px);
+    animation-delay: 2s;
+}
+
+.text3 {
+    transform: rotate(4deg) translateY(100px) translateX(-100px);
+    animation-delay: 5s;
+}
+
+.text4 {
+    transform: rotate(-7deg) translateY(-100px) translateX(50px);
+    animation-delay: 7s;
+}
+
+.text5 {
+    transform: rotate(1deg) translateY(150px) translateX(100px);
+    animation-delay: 3s;
+}

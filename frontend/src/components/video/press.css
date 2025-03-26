@@ -1,0 +1,111 @@
+.images div {
+    --border-width: 6px;
+    --speed: 0.06;
+    --move-x: calc(var(--page-x) * 1.5);
+    position: absolute;
+    width: var(--width);
+    border-radius: 6px;
+    top: var(--top);
+    left: var(--left);
+    z-index: var(--z-index);
+    border: var(--border-width) solid transparent;
+    transform-style: preserve-3d;
+    transform: translate(
+            calc(var(--move-x) * calc(var(--speed) * 1px)),
+            calc(var(--page-y) * calc(var(--speed) * 1px))
+        )
+        rotate3d(
+            calc(var(--move-x) * var(--speed)),
+            calc(var(--page-y) * var(--speed)),
+            1,
+            20deg
+        );
+}
+
+img {
+    width: 100%;
+    border-radius: calc(var(--border-width) - 2px);
+}
+
+.images div::before {
+    content: '';
+
+    background-size: 100% 100%;
+    background-position:
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px;
+    background-image: radial-gradient(
+            49% 81% at 45% 47%,
+            #3ec4d8 0%,
+            #073aff00 100%
+        ),
+        radial-gradient(142% 91% at 83% 7%, #30c2d7ff 1%, #ff000000 99%),
+        radial-gradient(142% 91% at -6% 74%, #4ae5fdff 1%, #ff000000 99%),
+        radial-gradient(142% 91% at 111% 84%, #0e282aff 0%, #026b6bff 100%);
+
+    width: calc(100% + var(--border-width));
+    height: calc(100% + calc(var(--border-width) - 3px));
+    position: absolute;
+    z-index: -1;
+    top: calc(var(--border-width) / -2);
+    left: calc(var(--border-width) / -2);
+    border-radius: calc(var(--border-width) - 2px);
+}
+
+.images div:nth-child(1) {
+    --speed: 0.035;
+    --width: 73px;
+    --left: 19px;
+    --top: 95px;
+}
+
+.images div:nth-child(2) {
+    --z-index: 2;
+    --width: 156px;
+    --left: 118px;
+    --top: 124px;
+    --speed: 0.03;
+}
+
+.images div:nth-child(3) {
+    --z-index: 3;
+    --width: 79px;
+    --left: 263px;
+    --top: 68px;
+    --speed: 0.04;
+}
+
+.images div:nth-child(4) {
+    --width: 117px;
+    --left: 267px;
+    --top: 234px;
+    --speed: 0.045;
+}
+
+.images div:nth-child(5) {
+    --z-index: 3;
+    --width: 95px;
+    --left: 34px;
+    --top: 235px;
+    --speed: 0.065;
+}
+
+.images {
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+body {
+    --top: #124b60;
+    --bottom: #070a14;
+    background-image: linear-gradient(var(--top), var(--bottom));
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 576px;
+}

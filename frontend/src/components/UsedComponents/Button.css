@@ -1,0 +1,121 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+
+p {
+    font-family: 'Quicksand';
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    text-decoration: none;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.button p {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button:hover .button-slide--left-to-right span {
+    transform: rotate(-180deg);
+}
+
+.button:hover .button-slide--left-to-right.button-base span {
+    transform: rotate(180deg);
+}
+
+.button:hover .button-slide--right-to-left span {
+    transform: rotate(180deg);
+}
+
+.button:hover .button-slide--right-to-left.button-base span {
+    transform: rotate(-180deg);
+}
+
+.button-slide {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.button-slide span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: block;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.button-slide--left-to-right {
+    left: 0;
+}
+
+.button-slide--left-to-right span {
+    left: 0;
+    border-right: 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    transform-origin: right center;
+}
+
+.button-slide--left-to-right.button-cover {
+    right: 0;
+    left: auto;
+}
+
+.button-slide--left-to-right.button-cover span {
+    left: -40px;
+}
+
+.button-slide--right-to-left {
+    right: 0;
+}
+
+.button-slide--right-to-left span {
+    right: 0;
+    border-left: 0;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    transform-origin: left center;
+}
+
+.button-slide--right-to-left.button-cover {
+    right: auto;
+    left: 0;
+}
+
+.button-slide--right-to-left.button-cover span {
+    right: -40px;
+}
+
+.button-base {
+    opacity: 0.3;
+}

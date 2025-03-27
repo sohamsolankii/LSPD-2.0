@@ -5,7 +5,9 @@ const connectDB = async () => {
     try {
         console.log()
         await mongoose
-            .connect(`${process.env.MONGO_URL}`)
+            .connect(
+                `mongodb+srv://meetsuthar2005:meet2005@lspdcluster.pg0zohr.mongodb.net/LSPD`,
+            )
             .then(() => {
                 console.log('Connected to Database')
             })

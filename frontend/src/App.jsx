@@ -6,7 +6,8 @@ import Navbar from './components/Header/Navbar.jsx'
 import {UserContextProvider} from './context/userContext.jsx'
 import ChatbotContainer from './components/chatbot/ChatbotContainer'
 
-axios.defaults.baseURL = 'http://localhost:8000/'
+// axios.defaults.baseURL = 'http://localhost:8000/'
+axios.defaults.baseURL = 'https://lspd-mq7j.onrender.com/'
 axios.defaults.withCredentials = true
 
 const App = () => {

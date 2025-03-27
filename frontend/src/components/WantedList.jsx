@@ -4,6 +4,9 @@ import styled, {keyframes, css} from 'styled-components'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
+// img
+import element from '../assets/element.png'
+
 const WantedList = () => {
     const [characters, setCharacters] = useState([])
 
@@ -30,7 +33,7 @@ const WantedList = () => {
         <div className="bg-[var(--bg1)] text-[var(--lblue)] dark:bg-white dark:text-[var(--dlblue)] min-h-screen">
             <section className="bg-[var(--bg2)] dark:bg-[var(--dbg2)]">
                 <img
-                    src="/src/assets/element.png"
+                    src={`${element}`}
                     alt="Do Not Cross"
                     className="animate-pulse w-full z-50 blockanim2 appear2"
                 />

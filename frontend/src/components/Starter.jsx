@@ -2,6 +2,10 @@ import React from 'react'
 import {useEffect, useRef} from 'react'
 import LSPDLogo from '/src/assets/lspd-logo.png'
 
+// img 
+import audiobg from '../../src/assets/videobg.mp3'
+import videbg2 from '../../src/assets/videobg.mp4'
+
 const AudioPlayer = () => {
     const audioRef = useRef(null)
 
@@ -17,7 +21,7 @@ const AudioPlayer = () => {
     return (
         <audio
             ref={audioRef}
-            src="/src/assets/videobg.mp3"
+            src={`${audiobg}`}
             type="audio/mp3"
             autoPlay
             loop={false}
@@ -32,7 +36,7 @@ const Starter = () => {
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
             <video
                 className="absolute inset-0 object-cover w-full h-full"
-                src="/src/assets/videobg.mp4"
+                src={videbg2}
                 type="video/mp4"
                 autoPlay
                 loop={false}

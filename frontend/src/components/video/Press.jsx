@@ -3,6 +3,12 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import conf from '../../assets/conf.jpg'
 
+// img
+import asset1 from '../../assets/1.jpeg'
+import asset2 from '../../assets/2.jpeg'
+import asset4 from '../../assets/4.jpeg'	
+
+
 const Press = () => {
     const [RoomCode, setRoomCode] = useState('')
     const navigate = useNavigate()
@@ -115,17 +121,17 @@ const Press = () => {
                 </div>
                 <div className="h-auto w-full md:w-1/2 grid grid-cols-2 md:gap-6 md:p-6 gap-3 p-3">
                     <img
-                        src="/src/assets/1.jpeg"
+                        src={asset1}
                         alt="Image 1"
                         className="cursor-pointer border-[1px] border-[var(--opac2)] shadow-black/30 shadow-xl dark:shadow-none dark:border-gray-400 rounded-lg"
                     />
                     <img
-                        src="/src/assets/2.jpeg"
+                        src={asset2}
                         alt="Image 2"
                         className="cursor-pointer border-[1px] border-[var(--opac2)] shadow-black/30 shadow-xl dark:shadow-none dark:border-gray-400 rounded-lg"
                     />
                     <img
-                        src="/src/assets/4.jpeg"
+                        src={asset4}
                         alt="Image 3"
                         className="cursor-pointer w-full col-span-2 border-[1px] border-[var(--opac2)] shadow-black/30 shadow-xl dark:shadow-none dark:border-gray-400 rounded-lg"
                     />

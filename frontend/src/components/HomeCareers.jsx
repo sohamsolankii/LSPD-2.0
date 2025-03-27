@@ -5,6 +5,9 @@ import '../i18n'
 import * as AiIcons from 'react-icons/ai'
 import {useTranslation} from 'react-i18next'
 
+// img
+import nes from '../../src/assets/careers.webp'
+
 const careers = [
     {
         title: 'Join Our Team',
@@ -69,7 +72,7 @@ const HomeCareers = () => {
                 </div>
                 <div className="flex items-center justify-center md:w-1/2 w-full">
                     <img
-                        src="/src/assets/careers.webp"
+                        src={nes}
                         alt="Careers at LSPD"
                         className="rounded-lg shadow-lg"
                     />

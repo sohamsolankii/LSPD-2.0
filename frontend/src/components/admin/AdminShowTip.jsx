@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
+// img
+import criminal from "../../../src/assets/criminal.jpg"
+
 const AdminShowTip = () => {
     const [tips, setTips] = useState([])
     const [loading, setLoading] = useState(true)
@@ -99,7 +102,7 @@ const AdminShowTip = () => {
                                 </div>
                                 <div className="flex flex-col items-center justify-center shadow-black/30 shadow-lg dark:shadow-sm p-8 rounded-b-lg bg-[var(--opac2)] dark:bg-blue-600 text-gray-300 border-[1px] border-[var(--opac)] dark:text-gray-50">
                                     <img
-                                        src="/src/assets/criminal.jpg"
+                                        src={`${criminal}`}
                                         alt=""
                                         className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full  bg-gray-500 dark:bg-gray-500 bg-gray-700 dark:bg-gray-300"
                                     />

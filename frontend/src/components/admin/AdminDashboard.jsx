@@ -4,42 +4,51 @@ import {UserContext} from '../../context/userContext'
 // import AdminStarter from '../AdminStarter';  // Create a similar starter for admin if necessary
 // import AdminWantedList from './AdminWantedList';  // Admin specific component for CRUD operations
 
+// img
+import admin1 from '../../../src/assets/admin/1.jpeg'
+import admin2 from '../../../src/assets/admin/2.jpeg'
+import admin3 from '../../../src/assets/admin/3.jpeg'
+import admin4 from '../../../src/assets/admin/4.jpeg'
+import admin5 from '../../../src/assets/admin/5.jpeg'
+import admin6 from '../../../src/assets/admin/6.jpeg'
+
+
 const adminDashboardData = [
     {
-        image: '/src/assets/admin/1.jpeg',
+        image: `{${admin1}`,
         url: '/admin/most-wanted',
         title: 'Manage Most Wanted Profiles',
         description:
             'Oversee, update, and manage the Most Wanted list for LSPD.',
     },
     {
-        image: '/src/assets/admin/2.jpeg',
+        image: `${admin2}`,
         url: '/admin/jobs',
         title: 'Post and Manage Job Listings',
         description: 'Create and maintain job opportunities within the LSPD.',
     },
     {
-        image: '/src/assets/admin/3.jpeg',
+        image: `${admin3}`,
         url: '/admin/jobs/applications',
         title: 'Review and Approve Applications',
         description:
             'Evaluate job applications and select qualified candidates.',
     },
     {
-        image: '/src/assets/admin/4.jpeg',
+        image: `${admin4}`,
         url: '/admin/news',
         title: 'Manage News and Alerts',
         description:
             'Publish, edit, and remove news updates and public alerts.',
     },
     {
-        image: '/src/assets/admin/5.jpeg',
+        image: `${admin5}`,
         url: '/admin/show-tips',
         title: 'Review User-Submitted Tips',
         description: 'Access and manage tips submitted by the public.',
     },
     {
-        image: '/src/assets/admin/6.jpeg',
+        image: `${admin6}`,
         url: '/admin/crime-reports',
         title: 'Manage Crime Reports',
         description: 'Review and address submitted crime complaints.',
@@ -94,7 +103,7 @@ const AdminDashboard = () => {
                         className="flex reflection col-span-1 md:col-span-2 w-[100%] cursor-pointer bg-[var(--opac)] dark:bg-white p-4 rounded-2xl shadow-black/40 shadow-2xl border-[1px] border-[var(--opac)] dark:border-[var(--whiteop)] dark:border-[1px] text-left items-center transform transition-transform duration-300 hover:bg-[var(--opac2)] hover:dark:bg-white"
                     >
                         <img
-                            src="/src/assets/admin/2.jpeg"
+                            src={`${admin2}`}
                             alt={`Image`}
                             className="w-1/3 cursor-pointer md:w-[10%] border-[1px] border-[var(--opac2)] shadow-black/30 shadow-xl rounded-lg mr-4 md:mr-6"
                         />

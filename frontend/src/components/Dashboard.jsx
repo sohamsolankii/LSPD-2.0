@@ -1,26 +1,34 @@
 import React, {useContext} from 'react'
 // import GradBG from '../MeshGradien	tBackground'
 
+// img 
+import wanted from '../../src/assets/wanted.png'
+import tip from '../../src/assets/tip.png'
+import careers from '../../src/assets/careers.png'
+import news from '../../src/assets/news.png'
+import place from '../../src/assets/place.png'
+
+
 const dashboardData = [
     {
-        image: '/src/assets/wanted.png',
+        image: `${wanted}`,
         title: 'Most Wanted List',
         description: 'Catch Them if You Can (But Maybe Don’t Try Too Hard)',
     },
     {
-        image: '/src/assets/tip.png',
+        image: `${tip}`,
         title: 'Submit a Tip',
         description:
             'Got a Hot Tip? Let Us Know (or Just Gossip, We’re Not Judging)',
     },
     {
-        image: '/src/assets/careers.png',
+        image: `${careers}`,
         title: 'Careers at LSPD',
         description:
             'From Rookie to All-Star Cop – Start Your Journey in Los Santos',
     },
     {
-        image: '/src/assets/news.png',
+        image: `${news}`,
         title: 'News and Alerts',
         description: 'Stay Informed on the Latest in Los Santos',
     },
@@ -101,7 +109,7 @@ const Dashboard = () => {
                     </div>
                     <div className="w-[100%] lg:w-1/3">
                         <img
-                            src="/src/assets/place.png"
+                            src={place}
                             alt="Place"
                             className="md:rounded-xl rounded-lg shadow-xl"
                         />

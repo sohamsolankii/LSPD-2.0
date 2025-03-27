@@ -78,10 +78,13 @@ export const logIn = AsyncHandler(async (req, res) => {
 
 // * LogOut
 export const logOut = AsyncHandler(async (req, res) => {
+	console.log('Logging out user...')
+	console.log('Cookies:', req.cookies) // Check if the cookie exists
     res.clearCookie('userCookie')
         .status(200)
         .json(new ApiResponse(200, {}, 'User logged out successfully'))
 })
+
 
 // * Forgot password
 export const forgotPassword = AsyncHandler(async (req, res) => {

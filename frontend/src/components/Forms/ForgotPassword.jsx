@@ -3,6 +3,9 @@ import {useNavigate, Link} from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
 
+// img 
+import bg from '../../assets/formbg3.jpeg'
+
 const ForgotPassword = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -35,7 +38,7 @@ const ForgotPassword = () => {
     return (
         <div
             className="poppins relative min-h-screen flex items-center justify-center bg-cover bg-center"
-            style={{backgroundImage: "url('/src/assets/formbg3.jpeg')"}}
+            style={{backgroundImage: `url(${bg})`}}
         >
             <div className="absolute inset-0 bg-[var(--bg2)] opacity-80"></div>
             <div className="bg-[var(--bg3op)] relative z-10 p-8 px-12 py-20 text-[var(--lblue)] glassgrad rounded-2xl backdrop-blur-md border-2 border-[#475569] transition ease-in-out delay-300 hover:backdrop-blur-2xl shadow-black/70 shadow-2xl w-[90%] md:w-[70%] lg:w-[25%]">

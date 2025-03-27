@@ -5,6 +5,9 @@ import {toast} from 'react-hot-toast'
 import {UserContext} from '../../context/userContext'
 import Cookies from 'js-cookie' 
 
+// img
+import bg from '../../assets/formbg3.jpeg'
+
 const Login = () => {
     const navigate = useNavigate()
     const {setUser} = useContext(UserContext)
@@ -64,7 +67,7 @@ const Login = () => {
     return (
         <div
             className="poppins relative min-h-screen flex items-center justify-center bg-cover bg-center"
-            style={{backgroundImage: "url('/src/assets/formbg3.jpeg')"}}
+            style={{backgroundImage: `url(${bg})`}}
         >
             <div className="absolute inset-0 bg-[var(--bg2)] opacity-80"></div>
             <div className="bg-[var(--bg3op)] relative z-10 p-8 text-[var(--lblue)] glassgrad rounded-2xl backdrop-blur-md border-2 border-[#475569] transition ease-in-out delay-300 hover:backdrop-blur-2xl shadow-black/70 shadow-2xl w-[90%] md:w-[70%] lg:w-[25%]">

@@ -7,12 +7,16 @@ export const authValidator = AsyncHandler((req, res, next) => {
 		// console.log('cookie', cookie);
         jwt.verify(cookie, process.env.ACCESS_TOKEN, (err, decoded) => {
             if (err) {
-                return res.sendStatus(403)
+				console.log('Token verification failed:', err.message) // Log the error for debugging
+				return res
+					.status(403)
+					.json({message: 'Token is expired or invalid'})
             }
             req.user = decoded.user
             next()
         })
     } else {
         res.status(401).json('User not authenticated')
+		console.log('User not authenticated')
     }
 })

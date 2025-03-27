@@ -1,5 +1,7 @@
 export const corsOptions = {
-    origin: '*',
+    origin: (origin, callback) => {
+        callback(null, true) // Allow all origins
+    },
     credentials: true, // Allow cookies/auth to be passed
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Specify allowed methods
     allowedHeaders: [
